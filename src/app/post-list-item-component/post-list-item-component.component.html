@@ -1,0 +1,17 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts <= 0}">
+    <app-post [title]="post.title" [content]="post.content" [created_at]="post.created_at">
+    </app-post>
+  <div class="row">
+      <div class="col-sm-1">
+        <button class="btn" style="color: green" (click)="addLike()">Love it!</button>
+      </div>
+      <div class="col-sm-9">
+        <button class="btn" style="color: red" (click)="removeLike()">Don't love it!</button>
+      </div>
+      <div >
+          <button class="btn" style="color: red" (click)="removePost()">Supprimer Post</button>
+        </div>
+  </div>
+</li>
